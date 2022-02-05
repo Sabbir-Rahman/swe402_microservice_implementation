@@ -7,37 +7,47 @@ services:
     image: nginx:1.17.10
     container_name: reverese_proxy_demo
     depends_on:
-      - service_a
-      - service_b
-      - service_c
+      - customer_service
+      - employee_service
+      - inventory_service
+      - order_service
     volumes:
       - ./api_gateway(reverse_proxy)/nginx.conf:/etc/nginx/nginx.conf 
     ports:
       - 80:80
     
-  service_a:
-    image: service_a
-    container_name: service_a
+  customer_service:
+    image: customer_service
+    container_name: customer_service  
     build:
-      context: ./service_a
+      context: ./customer_service
     ports:
       - 5000:5000
     restart: on-failure
   
-  service_b:
-    image: service_b
-    container_name: service_b
+  employee_service:
+    image: employee_service
+    container_name: employee_service
     build:
-      context: ./service_b
+      context: ./employee_service
     ports:
       - 5001:5001
     restart: on-failure
   
-  service_c:
-    image: service_c
-    container_name: service_c
+  inventory_service:
+    image: inventory_service
+    container_name: inventory_service
     build:
-      context: ./service_c
+      context: ./inventory_service
     ports:
       - 5002:5002
+    restart: on-failure
+  
+  order_service:
+    image: order_service
+    container_name: order_service
+    build:
+      context: ./order_service
+    ports:
+      - 5003:5003
     restart: on-failure

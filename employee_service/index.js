@@ -8,7 +8,7 @@ app.listen(PORT,(req,res)=>{
 })
 
 app.get('/',(req,res)=>{
-    res.send("Welcome from service b")
+    res.send("Welcome from employee service")
 })
 
 

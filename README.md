@@ -3,14 +3,16 @@ Here a sample microservice is created with api gateway pattern. Here api_gateway
 All the services will be running and managing by the docker
 
  PORT and Service : 
-* 5000 => service_a
-* 5001 => service_b
-* 5002 => service_c
+* 5000 => customer_service
+* 5001 => employee_service
+* 5002 => inventory_service
+* 5002 => order_service
 
 ### Routes
-* localhost/a => service_a
-* localhost/b => service_b
-* localhost/c => service_c
+* localhost/customer => customer_service
+* localhost/employee => employee_service
+* localhost/inventory => inventory_service
+* localhost/order => order_service
 
 
 ### Run Command
