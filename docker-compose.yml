@@ -18,7 +18,7 @@ services:
     
   customer_service:
     image: customer_service
-    container_name: customer_service  
+    container_name: customer_service 
     build:
       context: ./customer_service
     ports:
